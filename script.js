@@ -47,3 +47,19 @@ submenu.forEach((menu) => menu.addEventListener('click', function(e){
         this.closest('.has-child').classList.toggle('active');
     }
 }))
+
+// slider
+const swiper = new Swiper('.sliderbox', {
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    autoHeight: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+});
