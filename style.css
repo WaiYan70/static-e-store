@@ -161,6 +161,10 @@ h4{
     font-size: clamp(30px, -0.875em + 8.333vw, var(--fs-max, 40px));
 }
 
+.grey-color{
+    color: var(--grey-color);
+}
+
 .item-floating, .header-center .branding{
     display: flex;
     align-items: center;
@@ -250,6 +254,9 @@ h4{
 }
 
 .scrollto > .wrapper{
+    --display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
@@ -261,6 +268,7 @@ h4{
 }
 
 .scrollto .wrapper::-webkit-scrollbar-thumb{
+    /* --border-color: var(var(--white-color)); */
     background-color: var(--light-color);
     border: 3px solid var(--white-color);
     border-radius: 20px;
@@ -611,7 +619,7 @@ form.search :where(i:last-child){
     margin-top: 10px;
 }
 
-/* Slider / Hero Image Slider */
+/* Slider / Hero Image Slider Section */
 .slider :where(.image, .ob-cover){
     position: relative;
 }
@@ -718,6 +726,47 @@ form.search :where(i:last-child){
 .slider .swiper-slide-active .title-info .button{
     transition-delay: 750ms;
 }
+
+/* Guide Slider Section */
+.page-home main > div:not(.slider){
+    padding: 100px 0px;
+}
+.guide{
+    background-color: var(--flashwhite-color);
+}
+main > div .heading{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.guide .dotgrid .wrapper{
+    --grid-col: 260px;
+}
+:is(.guide) .dot-image .thumbnail{
+    position: relative;
+    opacity: unset;
+}
+.guide .dot-image .thumbnail img{
+    width: 100%;
+}
+.guide .dot-title{
+    --font-size-14: 18px;
+    --font-weight-600: 400;
+    padding: 10px 0px;
+}
+.guide .dot-info p{
+    line-height: 1.4;
+}
+.guide .wrapper .item{
+    width: 290px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+ }
+ .guide .scrollto .wrapper::-webkit-scrollbar-thumb{
+    --border-color: #f0f9f8;
+ }
+
+ /* Carousel */
+ 
 
 @media (min-width: 992px) {
     .menu-trigger{
