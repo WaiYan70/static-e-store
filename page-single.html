@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-clothing-store - Product Page</title>
+    <title>E-clothing-store - Single Product Page</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css"
@@ -424,8 +424,8 @@
                         <ul>
                           <li><a href=""><i class="ri-heart-line"></i><span>Add to Wishlist</span></a></li>
                           <li><a href=""><i class="ri-arrow-left-right-line"></i><span>Compare</span></a></li>
-                          <li><a href=""><i class="ri-share-forward-line"></i><span>Share</span></a></li>
-                          <li><a href=""><i class="ri-question-line"></i><span>Ask Questions</span></a></li> 
+                          <li><a href="#0" data-trigger-button data-target="data-share"><i class="ri-share-forward-line"></i><span>Share</span></a></li>
+                          <li><a href="#0" data-trigger-button data-target="data-question"><i class="ri-question-line"></i><span>Ask Questions</span></a></li> 
                         </ul>
                       </div>
                       <!-- Product Delivery -->
@@ -1202,12 +1202,12 @@
         </div>
       </div>
     </div>
-    <!-- PopUp Models (Share / Ask Question) -->
+    <!-- PopUp Models (Share / Ask Question / Review) -->
     <!-- "Share" Popup Models Section -->
     <div id="data-share" class="data-popup d-share">
       <div class="wrap">
         <div class="data-content">
-          <a href="" class="close-trigger"><i class="ri-close-line"></i></a>
+          <a href="#0" class="close-trigger" data-close-button><i class="ri-close-line"></i></a>
           <div class="form">
             <label>Copy Link</label>
             <input type="text" disabled value="https://topone.com.mm">
@@ -1227,10 +1227,56 @@
       </div>
     </div>
     <!-- "Ask Question" Popup Models Section -->
-    <div id="data-share" class="data-popup d-share">
-      <div class="data-content">
-        <div class="wrap">
-          <a href="" class="close-trigger"><i class="ri-close-line"></i></a>
+    <div id="data-question" class="data-popup d-question">
+      <div class="wrap">
+        <div class="data-content">
+          <a href="#0" class="close-trigger" data-close-button><i class="ri-close-line"></i></a>
+          <h3>The Question</h3>
+          <form action="">
+            <div><input type="text" placeholder="Name"></div>
+            <div><input type="text" placeholder="Email"></div>
+            <div><textarea placeholder="Your question is ...." cols="30" rows="5"></textarea></div>
+            <div class="button">
+              <button type="submit" class="secondary-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- "Review" Popup Models Section -->
+    <div id="data-review" class="data-popup d-review">
+      <div class="wrap">
+        <div class="data-content">
+          <a href="#0" class="close-trigger" data-close-button><i class="ri-close-line"></i></a>
+          <h3>Write a Review</h3>
+          <form action="">
+            <div class="dotgrid">
+              <div class="wrapper">
+                <div><input type="text" placeholder="Name"></div>
+                <div><input type="text" placeholder="Email"></div>
+              </div>
+              <div class="rating">
+                <span>Your rating: </span>
+                <div class="stars">
+                  <input type="radio" name="rating" id="star5">
+                  <label for="star5"><i class="ri-star-fill"></i></label>
+                  <input type="radio" name="rating" id="star4">
+                  <label for="star4"><i class="ri-star-fill"></i></label>
+                  <input type="radio" name="rating" id="star3">
+                  <label for="star3"><i class="ri-star-fill"></i></label>
+                  <input type="radio" name="rating" id="star2">
+                  <label for="star2"><i class="ri-star-fill"></i></label>
+                  <input type="radio" name="rating" id="star1">
+                  <label for="star1"><i class="ri-star-fill"></i></label>
+                </div>
+              </div>
+              <div><input type="text" placeholder="Review title"></div>
+              <div><textarea placeholder="Your review is..." cols="30" rows="5"></textarea></div>
+              <div class="button">
+                <button type="submit" class="secondary-btn">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
