@@ -69,15 +69,14 @@ const content = document.querySelectorAll('.tabbed > div');
 trigger.forEach((btn) => {
     btn.addEventListener('click', function(){
         let dataTarget = this.dataset.id;
-        // let body = document.querySelector(`#${dataTarget}`);
         let body = document.querySelector(`#${dataTarget}`);
 
-        content.forEach((b) => b.parentNode.classList.remove('active'));
+        trigger.forEach((b) => b.parentNode.classList.remove('active'));
         content.forEach((s) => s.classList.remove('active'));
         this.parentNode.classList.add('active');
         // this.parentElement.classList.add('active');
         body.classList.add('active');
-    })
+    });
 });
 
 // Guide slider
