@@ -1337,7 +1337,7 @@ main > div .heading{
     content: '';
     position: absolute;
     left: 0;
-    top: 60px;
+    top: 58px;
     height: 2px;
     width: 100%;
     background-color: var(--light-color);
@@ -2150,6 +2150,7 @@ input[type="range"]::-webkit-slider-thumb{
 }
 /* The End of Mobile Navigation */
 
+/* Media Query (Min Width) */
 @media (min-width: 481px) {
     .product .wrapper{
         --gutter: 60px;
@@ -2241,7 +2242,6 @@ input[type="range"]::-webkit-slider-thumb{
     }
 }
 
-/* Media Query */
 @media (min-width: 992px) {
     .menu-trigger,
     .sidebar .close-trigger,
@@ -2324,7 +2324,7 @@ input[type="range"]::-webkit-slider-thumb{
     .scrollto .wrapper:not(.initial){
         --display: grid;
         padding: 0px;
-        /* overflow: unset; */
+        overflow: unset;
         scroll-snap-type: unset;
         overscroll-behavior-inline: unset;
     }
@@ -2351,6 +2351,7 @@ input[type="range"]::-webkit-slider-thumb{
     }
 }
 
+/* Media Query (Max Width) */
 @media (max-width: 480px) {
     .carousel .dotgrid .item{
         width: 270px;
