@@ -1,42 +1,50 @@
-const triggerOpen = document.querySelectorAll('[data-trigger-button]');
-const triggerClose = document.querySelectorAll('[data-close-button]');
+// const triggerOpen = document.querySelectorAll('[data-trigger-button]');
+// const triggerClose = document.querySelectorAll('[data-close-button]');
+// const overlay = document.querySelector('[data-overlay]');
+
+// for(let i = 0; i < triggerOpen.length;i++){
+//     let currentId = triggerOpen[i].dataset.target,
+//         targetEl = document.querySelector(`#${currentId}`);
+
+//     const openData = function(){
+//         targetEl.classList.remove('active');
+//         overlay.classList.remove('active');
+//     };
+//     triggerOpen[i].addEventListener('click', function(){
+//         targetEl.classList.add('active');
+//         overlay.classList.add('active');
+//     });
+
+//     targetEl.querySelector('[data-close-button]').addEventListener('click', openData);
+//     overlay.addEventListener('click', openData);
+// }
+
+const triggerOpen = document.querySelector('[data-trigger-button]');
+const triggerClose = document.querySelector('[data-close-button]');
 const overlay = document.querySelector('[data-overlay]');
 
-for(let i = 0; i < triggerOpen.length;i++){
-    let currentId = triggerOpen[i].dataset.target,
-        targetEl = document.querySelector(`#${currentId}`);
+const openMenu = () => {
+  document.body.classList.add('no-scroll');
+  overlay.classList.add('active');
+};
 
-    const openData = function(){
-        targetEl.classList.remove('active');
-        overlay.classList.remove('active');
-    };
-    triggerOpen[i].addEventListener('click', function(){
-        targetEl.classList.add('active');
-        overlay.classList.add('active');
-    });
+const closeMenu = () => {
+  document.body.classList.remove('no-scroll');
+  overlay.classList.remove('active');
+};
 
-    targetEl.querySelector('[data-close-button]').addEventListener('click', openData);
-    overlay.addEventListener('click', openData);
+triggerOpen.addEventListener('click', () => {
+  document.querySelector('.mobile-menu').classList.add('active');
+  openMenu();
+});
 
-    // if (targetEl) {
-    //     const openData = function () {
-    //         targetEl.classList.remove('active');
-    //         overlay.classList.remove('active');
-    //     };
+triggerClose.addEventListener('click', () => {
+  document.querySelector('.mobile-menu').classList.remove('active');
+  closeMenu();
+});
 
-    //     triggerOpen[i].addEventListener('click', function () {
-    //         targetEl.classList.add('active');
-    //         overlay.classList.add('active');
-    //     });
+overlay.addEventListener('click', closeMenu);
 
-    //     const closeButton = targetEl.querySelector('[data-close-button]');
-    //     if (closeButton) {
-    //         closeButton.addEventListener('click', openData);
-    //     }
-
-    //     overlay.addEventListener('click', openData);
-    // }
-}
 
 // Mobile - submenu 
 const submenu = document.querySelectorAll('.child-trigger');
@@ -48,7 +56,7 @@ submenu.forEach((menu) => menu.addEventListener('click', function(e){
     }
 }))
 
-// sorter
+// sorter (sorting categories {Sweater, Hoodie and Shirt})
 const sorter = document.querySelector('.sort-list');
 if(sorter){
     const sortLi = sorter.querySelectorAll('li');
