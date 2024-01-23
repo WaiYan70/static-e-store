@@ -44,7 +44,8 @@ if(sorter){
     }));
 }
 
-// tabbed
+// tabbed in index/product-single page 
+// changing the text when click on the button/ name
 const trigger = document.querySelectorAll('.tabbed-trigger');
 const content = document.querySelectorAll('.tabbed > div');
 trigger.forEach((btn) => {
@@ -59,6 +60,42 @@ trigger.forEach((btn) => {
         body.classList.add('active');
     });
 });
+
+// Filtering in Product Category Page
+const filterList = document.querySelector(".filter-list");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const item = document.querySelectorAll(".item");
+
+filterButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const filter = e.target.getAttribute('data-filter');
+
+        // check the active button
+        updateActiveButton(e.target);
+        // filter the list
+        filterItems(filter);
+    })
+});
+
+function updateActiveButton(newButton){
+    filterList.querySelector('.active').classList.remove('active');
+    newButton.classList.add('active');
+}
+
+function filterItems(itemFilter){
+    // get each item category
+    // check if that category matches the filter 
+    // if it matches, show that relative items' category
+    // if not, hide other items' category
+    item.forEach((it)=>{
+        const itemCategory = it.getAttribute('data-category');
+        if(itemFilter === 'all' || itemFilter === itemCategory){
+            it.removeAttribute('hidden');
+        } else{
+            it.setAttribute('hidden','');
+        }
+    });
+}
 
 // Guide slider
 const swiper = new Swiper('.sliderbox', {

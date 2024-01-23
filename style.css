@@ -294,7 +294,7 @@ input.checker:checked::after{
 
 .scrollto > .wrapper{
     --display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     padding-bottom: 20px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -1796,6 +1796,24 @@ input[type="range"]::-webkit-slider-thumb{
 }
 .sidebar .price-range{
     font-size: 18px;
+}
+.sidebar .widget .product-size-type .filter-btn{
+    cursor: pointer;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+    }
+.sidebar .widget .product-size-type .filter-btn:hover,
+.sidebar .widget .product-size-type .filter-btn:focus{
+    background-color: #ccc;
+    color: var(--dark-color);
+}
+.sidebar .widget .product-size-type .filter-btn.active{
+    pointer-events: none;
+    background-color: var(--dark-color);
+    color: var(--white-color);
 }
 .sidebar .widget .accord{
     padding-right: 15px;
