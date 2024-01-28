@@ -66,13 +66,26 @@ const filterList = document.querySelector(".filter-list");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const item = document.querySelectorAll(".item");
 
+let itemIndex = 0;
+item.forEach((itemEach) =>{
+    itemEach.style.viewTransitionName = `item-${++itemIndex}`;
+})
+
 filterButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
         const filter = e.target.getAttribute('data-filter');
-        // check the active button
-        updateActiveButton(e.target);
-        // filter the list
-        filterItems(filter);
+        if(!document.startViewTransition) {
+            // check the active button
+            updateActiveButton(e.target);
+            // filter the list
+            filterItems(filter);
+        };
+        document.startViewTransition(() => {
+            // check the active button
+            updateActiveButton(e.target);
+            // filter the list
+            filterItems(filter);
+        });
     })
 });
 
