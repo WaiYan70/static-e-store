@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Right Sidebar Navigation</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -63,6 +68,39 @@
         width: 0em;
         margin: -1em;
       }
+
+      /* Back to Top Button */
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #dc143c;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        text-decoration: none;
+        transition: 0.2s ease-out;
+      }
+
+      .back-to-top span {
+        color: #fff;
+        font-size: 3rem;
+        transition: 0.2s ease-out;
+      }
+
+      .back-to-top:hover {
+        background-color: #be1a3b;
+      }
+      .back-to-top:hover span {
+        transform: translateY(-4px);
+      }
       @media screen and (max-width: 1439px) {
         .images{
           max-width: 896px;
@@ -120,6 +158,12 @@
         <img src="assets/product_08b.jpg" alt="img" data-img="4">
       </div>
     </section>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#" class="back-to-top">
+      <!-- <span class="material-icons">arrow_upward</span> -->
+      <span><i class="ri-arrow-up-line"></i></span>
+    </a>
 
     <script>
       // Filtering in Product Category Page
