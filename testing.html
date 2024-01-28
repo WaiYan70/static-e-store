@@ -11,88 +11,172 @@
         margin: 0;
         padding: 0;
       }
-
-      .container {
-        text-align: center;
-        margin-top: 50px;
+      .gallery{
+        padding: 2em;
+        min-height: 120vh;
       }
-
-      .open-btn {
-        padding: 10px 20px;
-        font-size: 16px;
+      .buttons{
+        padding: 2em 0em 6em 0em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .buttons button{
+        margin: 1em;
+        padding: 0.7em 1.5em;
+        font-size: 1.1em;
+        border: none;
+        background: #111;
+        color: #fff;
+        border: 2px solid #111;
+        border-radius: 0.2em;
         cursor: pointer;
+        transition: 300ms;
+      }
+      .buttons button:hover,
+      .buttons .btn-clicked{
+        background-color: #fff;
+        color: #111;
+      }
+      .images{
+        max-width: 1360px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2em;
+      }
+      .images img{
+        width: 25em;
+        margin: 1em;
+        border-radius: 0.2em;
+        transition: 600ms;
+      }
+      /* Classes for JS */
+      .images .img-expand{
+        width: 25em;
+        margin: 1em;
+      }
+      .images .img-shrink{
+        width: 0em;
+        margin: -1em;
+      }
+      @media screen and (max-width: 1439px) {
+        .images{
+          max-width: 896px;
+        }
+      }
+      @media screen and (max-width: 986px) {
+        .images{
+          align-items: center;
+          flex-direction: column;
+        }
+        .images img{
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .buttons button{
+          width: 100%;
+          display: block;
+        }
+        .images, 
+        .img-expand, 
+        .images img{
+          width: 100%;
+        }
       }
 
-      .overlay {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        overflow-x: hidden;
-        transition: 0.5s;
-      }
-
-      .overlay-content {
-        position: relative;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      .overlay a {
-        padding: 8px;
-        text-decoration: none;
-        font-size: 36px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .overlay a:hover,
-      .overlay a:focus {
-        color: #f1f1f1;
-      }
-
-      .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 60px;
-        color: #818181;
-        cursor: pointer;
-      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <button class="open-btn" id="openButton">Open Navigation</button>
-      <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="close-btn" id="closeButton">&times;</a>
-        <div class="overlay-content">
-          <!-- Your navigation links go here -->
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-        </div>
+    <section class="gallery">
+      <div class="buttons">
+        <button type="button">All</button>
+        <button type="button" data-btn="1">Cities</button>
+        <button type="button" data-btn="2">Animals</button>
+        <button type="button" data-btn="3">Mountains</button>
+        <button type="button" data-btn="4">Oscean</button>
       </div>
-    </div>
+      <div class="images">
+        <img src="assets/product_01.jpg" alt="img" data-img="1">
+        <img src="assets/product_02.jpg" alt="img" data-img="2">
+        <img src="assets/product_03.jpg" alt="img" data-img="2">
+        <img src="assets/product_04.jpg" alt="img" data-img="1">
+        <img src="assets/product_05.jpg" alt="img" data-img="3">
+        <img src="assets/product_06.jpg" alt="img" data-img="1">
+        <img src="assets/product_07.jpg" alt="img" data-img="4">
+        <img src="assets/product_08.jpg" alt="img" data-img="2">
+        <img src="assets/product_01b.jpg" alt="img" data-img="3">
+        <img src="assets/product_02b.jpg" alt="img" data-img="1">
+        <img src="assets/product_03b.jpg" alt="img" data-img="2">
+        <img src="assets/product_04b.jpg" alt="img" data-img="4">
+        <img src="assets/product_05b.jpg" alt="img" data-img="2">
+        <img src="assets/product_06b.jpg" alt="img" data-img="4">
+        <img src="assets/product_07b.jpg" alt="img" data-img="3">
+        <img src="assets/product_08b.jpg" alt="img" data-img="4">
+      </div>
+    </section>
 
     <script>
-      // Add event listeners using JavaScript
-      document.getElementById("openButton").addEventListener("click", openNav);
-      document.getElementById("closeButton").addEventListener("click", closeNav);
+      // Filtering in Product Category Page
 
-      function openNav() {
-        document.getElementById("myNav").style.width = "100%";
+      const btns = document.querySelectorAll(".buttons button");
+      const imgs = document.querySelectorAll(".images img");
+
+      // add a click event to all buttons
+      for(let i = 1; i < btns.length; i++){
+          btns[i].addEventListener('click', filterImg);
       }
 
-      function closeNav() {
-        document.getElementById("myNav").style.width = "0";
+      // set active button on click
+      function setActiveBtn(e){
+          //Remove active class from all buttons
+          btns.forEach(btn => {
+              btn.classList.remove('btn-clicked');
+          });
+          //Add active class to clicked button
+          e.target.classList.add('btn-clicked');
       }
+
+      //Filter Images
+      function filterImg(e){
+          // Run the active button function
+          setActiveBtn(e);
+          //loop through all images
+          imgs.forEach(img => {
+              //Expand all images
+              img.classList.remove('img-shrink');
+              img.classList.add('.img-expand');
+
+              //Get data from  data attributes
+              //Get image type data
+              const imgType = parseInt(img.dataset.img);
+              //Get button type data
+              const btnType = parseInt(e.target.dataset.btn);
+              // If the image type and the type of the clicked button are not same
+              if(imgType !== btnType){
+                  //hide the image
+                  img.classList.remove('img-expand');
+                  img.classList.add('img-shrink');
+              }
+          });
+      }
+
+      //Set click event for the 'All' button
+      btns[0].addEventListener('click', (e) => {
+          //Run the active button function
+          setActiveBtn(e);
+          //Loop through all images
+          imgs.forEach(img => {
+              //Expand all images
+              img.classList.remove('img-shrink');
+              img.classList.add('img-expand');
+          });
+      });
     </script>
   </body>
 </html>

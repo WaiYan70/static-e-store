@@ -69,7 +69,6 @@ const item = document.querySelectorAll(".item");
 filterButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
         const filter = e.target.getAttribute('data-filter');
-
         // check the active button
         updateActiveButton(e.target);
         // filter the list
@@ -96,6 +95,63 @@ function filterItems(itemFilter){
         }
     });
 }
+
+// // Filtering in Product Category Page
+// // const filterButtons = document.querySelectorAll(".filter-btn");
+// // const itemCategory = document.querySelectorAll(".item-category");
+// const btns = document.querySelectorAll(".filter-btn");
+// const imgs = document.querySelectorAll(".item-category");
+
+// // add a click event to all buttons
+// for(let i = 1; i < btns.length; i++){
+//     btns[i].addEventListener('click', filterImg);
+// }
+
+// // set active button on click
+// function setActiveBtn(e){
+//     //Remove active class from all buttons
+//     btns.forEach(btn => {
+//         btn.classList.remove('btn-clicked');
+//     });
+//     //Add active class to clicked button
+//     e.target.classList.add('btn-clicked');
+// }
+
+// //Filter Images
+// function filterImg(e){
+//     // Run the active button function
+//     setActiveBtn(e);
+//     //loop through all images
+//     imgs.forEach(img => {
+//         //Expand all images
+//         img.classList.remove('img-shrink');
+//         img.classList.add('img-expand');
+
+//         //Get data from  data attributes
+//         //Get image type data
+//         const imgType = parseInt(img.dataset.img);
+//         //Get button type data
+//         const btnType = parseInt(e.target.dataset.btn);
+//         // If the image type and the type of the clicked button are not same
+//         if(imgType !== btnType){
+//             //hide the image
+//             img.classList.remove('img-expand');
+//             img.classList.add('img-shrink');
+//         }
+//     });
+// }
+
+// //Set click event for the 'All' button
+// btns[0].addEventListener('click', (e) => {
+//     //Run the active button function
+//     setActiveBtn(e);
+//     //Loop through all images
+//     imgs.forEach(img => {
+//         //Expand all images
+//         img.classList.remove('img-shrink');
+//         img.classList.add('img-expand');
+//     });
+// });
 
 // Guide slider
 const swiper = new Swiper('.sliderbox', {
