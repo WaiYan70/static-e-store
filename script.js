@@ -64,10 +64,11 @@ trigger.forEach((btn) => {
 // Filtering in Product Category Page
 const filterList = document.querySelector(".filter-list");
 const filterButtons = document.querySelectorAll(".filter-btn");
-const item = document.querySelectorAll(".item");
+const itemCategory = document.querySelectorAll(".item-category");
+
 
 let itemIndex = 0;
-item.forEach((itemEach) =>{
+itemCategory.forEach((itemEach) =>{
     itemEach.style.viewTransitionName = `item-${++itemIndex}`;
 })
 
@@ -99,12 +100,12 @@ function filterItems(itemFilter){
     // check if that category matches the filter 
     // if it matches, show that relative items' category
     // if not, hide other items' category
-    item.forEach((it)=>{
-        const itemCategory = it.getAttribute('data-category');
-        if(itemFilter === 'all' || itemFilter === itemCategory){
-            it.removeAttribute('hidden');
+    itemCategory.forEach((item)=>{
+        const itemCate = item.getAttribute('data-category');
+        if(itemFilter === 'all' || itemFilter === itemCate){
+            item.removeAttribute('hidden');
         } else{
-            it.setAttribute('hidden','');
+            item.setAttribute('hidden','');
         }
     });
 }
@@ -169,7 +170,6 @@ function filterItems(itemFilter){
 // Scrolling Animations in Sections on Home Page
 const observer = new IntersectionObserver((entries) =>{
     entries.forEach((entry) => {
-        console.log(entry);
         if(entry.isIntersecting){
             entry.target.classList.add('show-section');
         } else{
@@ -178,22 +178,22 @@ const observer = new IntersectionObserver((entries) =>{
     });
 });
 
-const hiddenElements = document.querySelectorAll('.hidden');
+const hiddenElements = document.querySelectorAll('.hidden-section');
 hiddenElements.forEach((el) => observer.observe(el));
 
-// Scrolling Animations for each Items in Image Slider/Selection Sections on Home Page
-const observerCarouselItem = new IntersectionObserver((entries) =>{
+// Scrolling Animations for Header Text in Sections on Home Page
+const observerText = new IntersectionObserver((entries) =>{
     entries.forEach((entry) => {
         if(entry.isIntersecting){
-            entry.target.classList.add('expand-item');
+            entry.target.classList.add('show-text');
         } else{
-            entry.target.classList.remove('expand-item');
+            entry.target.classList.remove('show-text');
         }
     });
 });
 
-const hiddenCarouselItemsElements = document.querySelectorAll('.shrink-item');
-hiddenCarouselItemsElements.forEach((el) => observerCarouselItem.observe(el));
+const hiddenTextElements = document.querySelectorAll('.hidden-text');
+hiddenTextElements.forEach((el) => observerText.observe(el));
 
 // Scrolling Animations for each Items in Guide/Blog Sections on Home Page
 const observerItem = new IntersectionObserver((entries) =>{
@@ -204,8 +204,6 @@ const observerItem = new IntersectionObserver((entries) =>{
             entry.target.classList.remove('show-item');
         }
     });
-},{
-    threshold: 0,
 });
 
 const hiddenItemElements = document.querySelectorAll('.hidden-item');
@@ -232,15 +230,24 @@ hiddenHeaderElements.forEach((el) => observerHeader.observe(el));
 const observerFooter = new IntersectionObserver((entries) =>{
     entries.forEach((entry) => {
         if(entry.isIntersecting){
-            entry.target.classList.add('show-footer');
+            entry.target.classList.add('show-footer-left');
+            entry.target.classList.add('show-footer-right');
+            entry.target.classList.add('show-footer-bottom');
         } else{
-            entry.target.classList.remove('show-footer');
+            entry.target.classList.remove('show-footer-bottom');
+            entry.target.classList.remove('show-footer-left');
+            entry.target.classList.remove('show-footer-right');
         }
     });
 });
 
-const hiddenFooterElements = document.querySelectorAll('.hidden-footer');
-hiddenFooterElements.forEach((el) => observerFooter.observe(el));
+const hiddenFooterBottomElements = document.querySelectorAll('.hidden-footer-bottom');
+hiddenFooterBottomElements.forEach((el) => observerFooter.observe(el));
+const hiddenFooterTopLeftElements = document.querySelectorAll('.hidden-footer-left');
+hiddenFooterTopLeftElements.forEach((el) => observerFooter.observe(el));
+const hiddenFooterTopRightElements = document.querySelectorAll('.hidden-footer-right');
+hiddenFooterTopRightElements.forEach((el) => observerFooter.observe(el));
+
 
 // Hero Image Slider Section - 1
 const swiper = new Swiper('.sliderbox', {

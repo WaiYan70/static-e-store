@@ -111,35 +111,77 @@ h4{
 }
 
 /* Scrolling Animation */
-.hidden{
+.hidden-section{
     opacity: 0;
     filter: blur(20px);
-    transform: translateX(-100%);
-    transition: transform 650ms ease-in-out,
-                opacity 650ms ease-in-out,
+    transition: opacity 650ms ease-in-out,
                 filter 650ms ease-in-out;
 }
 .show-section{
     opacity: 1;
     filter: blur(0px);
-    transform: translateX(0);
 }
 
-/* Guide Image Slider Section */
-/* The Blog Section - 6  */
-.hidden-item{
+/* Scrolling Animation for Header Text*/
+.hidden-text{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 500ms ease-in-out,
+                transform 500ms ease-in-out;
+}
+.show-text{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+/* Scrolling Animation for Header and Footer */
+.hidden-header{
+    transform: translateY(-100%);
+    transition: transform 500ms ease-in-out;
+}
+.show-header{
+    transform: translateY(0);
+}
+
+.hidden-footer-bottom{
+    transform: translateY(100%);
+    transition: transform 650ms ease-in-out;
+}
+.show-footer-bottom{
+    transform: translateY(0);
+}
+
+/* Scrolling Animation for Guide Image Slider Section - 2 */
+/* Scrolling Animation for The Blog Section - 6  */
+.hidden-item,
+.hidden-footer-left{
     opacity: 0;
     filter: blur(20px);
     transform: translateX(-100%);
-    transition: transform 650ms ease-in-out,
-                opacity 650ms ease-in-out,
-                filter 650ms ease-in-out;
+    transition: transform 750ms ease-in-out,
+                opacity 750ms ease-in-out,
+                filter 750ms ease-in-out;
 }
-.show-item{
+.show-item,
+.show-footer-left{
     opacity: 1;
     filter: blur(0px);
     transform: translateX(0);
 }
+.hidden-footer-right{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(100%);
+    transition: transform 750ms ease-in-out,
+                opacity 750ms ease-in-out,
+                filter 750ms ease-in-out;
+}
+.show-footer-right{
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
 .guild-item:nth-child(1),
 .blog-item:nth-child(1){
     transition-delay: 200ms;
@@ -152,48 +194,32 @@ h4{
 .blog-item:nth-child(3){
     transition-delay: 600ms;
 }
-/* Carousel Image Slider Section */
-.shrink-item{
-    opacity: 0;
-    filter: blur(20px);
-    transform: scale(0);
-    transition: transform 850ms ease-in-out,
-                opacity 850ms ease-in-out,
-                filter 850ms ease-in-out;
-    /* transition: all 850ms ease-in-out; */
-}
-.expand-item{
-    opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
-}
-/* By Selecting Category / ByCats Section */
-
-.hidden-header{
-    transform: translateY(-100%);
-    transition: transform 500ms ease-in-out;
-}
-.show-header{
-    transform: translateY(0);
-}
-
-.hidden-footer{
-    transform: translateY(100%);
-    transition: transform 650ms ease-in-out;
-}
-.show-footer{
-    transform: translateY(0);
-}
 
 @media (prefers-reduced-motion) {
-    .hidden{
+    .hidden-section,
+    .hidden-item
+    .hidden-header,
+    .hidden-footer-left,
+    .hidden-footer-right,
+    .hidden-footer-bottom{
         transition: none;
     }
-    .hidden-header{
-        transition: none;
+}
+@media(max-width: 768px){
+    .guild-item:nth-child(1),
+    .blog-item:nth-child(1){
+        transform: none;
+        opacity: 1;
     }
-    .hidden-footer{
-        transition: none;
+    .guild-item:nth-child(2),
+    .blog-item:nth-child(2){
+        transform: none;
+        opacity: 1;
+    }
+    .guild-item:nth-child(3),
+    .blog-item:nth-child(3){
+        transform: none;
+        opacity: 1;
     }
 }
 
@@ -381,7 +407,7 @@ input.checker:checked::after{
 
 .scrollto > .wrapper{
     --display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     padding-bottom: 20px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -2423,6 +2449,9 @@ input[type="range"]::-webkit-slider-thumb{
     }
     .slider .button a:hover{
         border-color: var(--dark-color);
+    }
+    .scrollto > .wrapper{
+        justify-content: center;
     }
     .inner-footer .wrap > div{
         flex-flow: nowrap;
