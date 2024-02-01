@@ -239,15 +239,17 @@ const observerFooter = new IntersectionObserver((entries) =>{
             entry.target.classList.remove('show-footer-right');
         }
     });
+},{
+    // threshold: 0,
+    rootMargin: "70px",
 });
 
-const hiddenFooterBottomElements = document.querySelectorAll('.hidden-footer-bottom');
-hiddenFooterBottomElements.forEach((el) => observerFooter.observe(el));
 const hiddenFooterTopLeftElements = document.querySelectorAll('.hidden-footer-left');
 hiddenFooterTopLeftElements.forEach((el) => observerFooter.observe(el));
 const hiddenFooterTopRightElements = document.querySelectorAll('.hidden-footer-right');
 hiddenFooterTopRightElements.forEach((el) => observerFooter.observe(el));
-
+const hiddenFooterBottomElements = document.querySelectorAll('.hidden-footer-bottom');
+hiddenFooterBottomElements.forEach((el) => observerFooter.observe(el));
 
 // Hero Image Slider Section - 1
 const swiper = new Swiper('.sliderbox', {
