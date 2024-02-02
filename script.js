@@ -209,6 +209,20 @@ const observerItem = new IntersectionObserver((entries) =>{
 const hiddenItemElements = document.querySelectorAll('.hidden-item');
 hiddenItemElements.forEach((el) => observerItem.observe(el));
 
+// Scrolling Animations for each Items in Carousel Sections on Home Page
+const observerCarouselItem = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show-carousel-item');
+        } else{
+            entry.target.classList.remove('show-carousel-item');
+        }
+    });
+});
+
+const hiddenCarouselItemElements = document.querySelectorAll('.hidden-carousel-item');
+hiddenCarouselItemElements.forEach((el) => observerCarouselItem.observe(el));
+
 // Scrolling Animation in Header
 const observerHeader = new IntersectionObserver((entries) =>{
     entries.forEach((entry) => {
