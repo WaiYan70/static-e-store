@@ -69,11 +69,12 @@ const carouselItemsData = [
     },
 ];
 
-const basket = [];
+const basket = JSON.parse(localStorage.getItem("data")) || [];
 
 const carouselItemLists = () => {
     return (carouselWrapper.innerHTML = carouselItemsData.map((x) => {
         let{id, name, price, image, imagehover} = x;
+        let search = basket.find((x) => x.id === id) || [];
         return `
             <div id=item-id-${id} class="item carousel-item swiper-slide">
                 <div class="dot-image">
@@ -124,7 +125,9 @@ const carouselItemLists = () => {
                     </div>
                     <div class="item-control">
                         <i onclick="decrement(${id})" class="ri-subtract-fill"></i>
-                        <div id=${id} class="item-quantity">0</div>
+                        <div id=${id} class="item-quantity">
+                            ${search.item === undefined ? 0 : search.item}
+                        </div>
                         <i onclick="increment(${id})" class="ri-add-fill"></i>
                     </div>                
                 </div>
@@ -149,6 +152,7 @@ const increment = (id) => {
         search.item += 1;
     }
     // console.log(basket);
+    localStorage.setItem("data", JSON.stringify(basket));
     update(selectedItem.id);
 };
 
@@ -161,6 +165,7 @@ const decrement = (id) => {
         search.item -= 1;
     }
     // console.log(basket);
+    localStorage.setItem("data", JSON.stringify(basket));
     update(selectedItem.id);
 };
 
@@ -168,4 +173,14 @@ const update = (id) => {
     let search = basket.find((x)=>x.id === id);
     // console.log(search.item);
     document.getElementById(id).innerHTML = search.item;
+    calculation();
 }
+
+const calculation = () => {
+    let cartIcon = document.getElementById("item-counting-cart");
+    // cartIcon.innerHTML = 100;
+    // console.log(basket.map((x)=>x.item).reduce((x,y)=>x+y,0));
+    cartIcon.innerHTML = basket.map((x)=>x.item).reduce((x,y)=>x+y,0);
+}
+
+calculation();
