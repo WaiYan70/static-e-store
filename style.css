@@ -1732,7 +1732,7 @@ form .button button,
 .product-list li{
     margin-bottom: 30px;
 }
-.product-list .grouping{
+.product-list li .grouping{
     position: relative;
     float: left;
     padding-left: 45px;
@@ -2126,7 +2126,7 @@ input[type="range"]::-webkit-slider-thumb{
     left: 100%;
 }
 .cart-total .product-list{
-    background-color: var(--dark-color);
+    background-color: var(--dark-color);    
     color: var(--white-color);
 }
 .cart-total .grouping{
@@ -2374,6 +2374,7 @@ input[type="range"]::-webkit-slider-thumb{
     .has-bg::before, .has-bg::after{
         content: '';
         background-color: var(--flashwhite-color);
+        /* background-color: var(--dark-color); */
     }
     .cart-total .sub-total{
         padding-left: 10%;

@@ -280,7 +280,7 @@
                     </li>
                     <li>
                       <a href="#0" data-trigger-button data-target="data-cart">
-                        <span class="item-floating">3</span>
+                        <span class="item-floating" id="item-counting-cart">0</span>
                         <i class="ri-shopping-bag-line"></i>
                       </a>
                     </li>
@@ -311,14 +311,14 @@
         </div>
       </header>
       <main>
-        <div class="section">
+        <section class="section">
           <div class="container wide">
             <div class="wrap">
               <div class="heading">
                 <h1 class="title">Cart</h1>
               </div>
               <div class="content">
-                <div class="cart-table">
+                <div class="cart-table" id="shopping-cart">
                   <div class="product-list has-bg">
                     <div class="table-title">
                       <ul>
@@ -338,6 +338,7 @@
                     </div>
                     <div class="table-content">
                       <ul>
+                        <!-- Cart Item - 1 -->
                         <li class="dotgrid">
                           <div class="grouping wrapper">
                             <!-- copy structure from floating cart product - 1 -->
@@ -373,6 +374,7 @@
                             </a>
                           </div>
                         </li>
+                        <!-- Cart Item - 2 -->
                         <li class="dotgrid">
                           <div class="grouping wrapper">
                             <!-- copy structure from floating cart product - 2 -->
@@ -408,6 +410,7 @@
                             </a>
                           </div>
                         </li>
+                        <!-- Cart Item - 3 -->
                         <li class="dotgrid">
                           <div class="grouping wrapper">
                             <!-- copy structure from floating cart product - 3 -->
@@ -447,7 +450,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="cart-total">
+                <div class="cart-total" id="shopping-cart-total">
                   <div class="product-list has-bg">
                     <div class="grouping">
                       <div class="add-note">
@@ -472,7 +475,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <footer>
         <div class="inner-footer">
@@ -936,6 +939,7 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="cart.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
