@@ -703,6 +703,23 @@ form :where(input, textarea, select)::placeholder{
 .search-float.active{
     display: block;
 }
+/* The End of Search Bar */
+
+/* The Floating Search Item */
+.search-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 2.5rem;
+    margin: 0rem 3.5rem;
+}
+.search-card{
+    /* display: flex; */
+    border: 1px solid black;
+}
+.search-hide{
+    display: none;
+}
+/* The End of Floating Search Item*/
 
 /* Header: Mobile Menu */
 /* Cart Section */
