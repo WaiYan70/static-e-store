@@ -416,7 +416,7 @@ input.checker:checked::after{
     visibility: hidden;
     pointer-events: none;
     z-index: 999;
-    transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 }
 .overlay.active{
     opacity: 0.75;
@@ -1631,7 +1631,7 @@ main > section .heading{
 
 /* Popup Modal */
 .data-popup{
-    z-index: 1001;
+    z-index: 101;
     pointer-events: none;
 }
 .data-popup .wrap{
@@ -2329,7 +2329,7 @@ input[type="range"]::-webkit-slider-thumb{
     top: auto;
     background-color: var(--white-color);
     box-shadow: var(--shadow);
-    z-index: 888;
+    z-index: 98;
 }
 .mobile-nav > div{
     display: grid;
