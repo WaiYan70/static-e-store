@@ -1,6 +1,7 @@
 const triggerOpen = document.querySelectorAll('[data-trigger-button]');
 const triggerClose = document.querySelectorAll('[data-close-button]');
 const overlay = document.querySelector('[data-overlay]');
+const searchItems = document.querySelector('[data-search-items]');
 
 for(let i = 0; i < triggerOpen.length;i++){
     let currentId = triggerOpen[i].dataset.target;
@@ -9,16 +10,19 @@ for(let i = 0; i < triggerOpen.length;i++){
     const openData = function(){
         targetEl.classList.remove('active');
         overlay.classList.remove('active');
+        searchItems.classList.remove('active');
         console.log("remove active");
     };
     triggerOpen[i].addEventListener('click', function(){
         targetEl.classList.add('active');
         overlay.classList.add('active');
+        searchItems.classList.add('active');
         console.log("add active");
     });
 
     targetEl.querySelector('[data-close-button]').addEventListener('click', openData);
     overlay.addEventListener('click', openData);
+    searchItems.addEventListener('click', openData);
 }
 
 // Mobile - submenu 
@@ -211,48 +215,16 @@ const observerItem = new IntersectionObserver((entries) =>{
 const hiddenItemElements = document.querySelectorAll('.hidden-item');
 hiddenItemElements.forEach((el) => observerItem.observe(el));
 
-// Scrolling Animations for each Items in Carousel Sections on Home Page
-const observerCarouselItem = new IntersectionObserver((entries) =>{
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show-carousel-item');
-        } else{
-            entry.target.classList.remove('show-carousel-item');
-        }
-    });
-});
-
-const hiddenCarouselItemElements = document.querySelectorAll('.hidden-carousel-item');
-hiddenCarouselItemElements.forEach((el) => observerCarouselItem.observe(el));
-
-// Scrolling Animation in Header
-const observerHeader = new IntersectionObserver((entries) =>{
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show-header');
-        } else{
-            entry.target.classList.remove('show-header');
-        }
-    });
-},{
-    // threshold: 0,
-    rootMargin: "70px",
-});
-
-const hiddenHeaderElements = document.querySelectorAll('.hidden-header');
-hiddenHeaderElements.forEach((el) => observerHeader.observe(el));
 
 // Scrolling Animation in Footer
 const observerFooter = new IntersectionObserver((entries) =>{
     entries.forEach((entry) => {
         if(entry.isIntersecting){
             entry.target.classList.add('show-footer-left');
-            entry.target.classList.add('show-footer-right');
             entry.target.classList.add('show-footer-bottom');
         } else{
-            entry.target.classList.remove('show-footer-bottom');
             entry.target.classList.remove('show-footer-left');
-            entry.target.classList.remove('show-footer-right');
+            entry.target.classList.remove('show-footer-bottom');
         }
     });
 },{
@@ -262,8 +234,6 @@ const observerFooter = new IntersectionObserver((entries) =>{
 
 const hiddenFooterTopLeftElements = document.querySelectorAll('.hidden-footer-left');
 hiddenFooterTopLeftElements.forEach((el) => observerFooter.observe(el));
-const hiddenFooterTopRightElements = document.querySelectorAll('.hidden-footer-right');
-hiddenFooterTopRightElements.forEach((el) => observerFooter.observe(el));
 const hiddenFooterBottomElements = document.querySelectorAll('.hidden-footer-bottom');
 hiddenFooterBottomElements.forEach((el) => observerFooter.observe(el));
 
