@@ -14,8 +14,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="data-products.js" defer></script>
     <script src="item.js" defer></script>
-    
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div id="page" class="page-home">
@@ -298,7 +300,7 @@
             <div class="container wide">
               <form action="" class="search">
                 <i class="ri-search-line"></i>
-                <input type="search" class="input" name="" id="searching-item" placeholder="Search the Products">
+                <input type="search" class="input" name="" id="searching-item" placeholder="Search the Products" onkeyup="search()">
                 <i class="ri-close-line" data-close-button></i>
               </form>
             </div>
@@ -1909,13 +1911,14 @@
     </div>
     <div class="overlay" data-overlay></div> 
     <!-- Search Cart Items List -->
-    <div class="search-list" data-search-items data-target="search-float">
+    <div class="search-list" id= "search-list" data-search-items data-target="search-float">
       <!-- Search Card - 1 -->
       <div class="search-card">
         <img src="assets/product_01.jpg" alt="">
         <div class="search-card-detail">
           <h3 class="search-card-header">
-            <a href="page-category.html">Search Item - 1</a>
+            <!-- <a href="page-category.html">Search Item - 1</a> -->
+            Teal Sweater - 1
           </h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
@@ -1924,7 +1927,7 @@
       <div class="search-card">
         <img src="assets/product_02.jpg" alt="">
         <div class="search-card-detail">
-          <h3 class="search-card-header">Search Item - 2</h3>
+          <h3 class="search-card-header">Blue Sweater - 2</h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
@@ -1932,7 +1935,7 @@
       <div class="search-card">
         <img src="assets/product_03.jpg" alt="">
         <div class="search-card-detail">
-          <h3 class="search-card-header">Search Item - 3</h3>
+          <h3 class="search-card-header">Blue Shirt - 3</h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
@@ -1940,7 +1943,7 @@
       <div class="search-card">
         <img src="assets/product_04.jpg" alt="">
         <div class="search-card-detail">
-          <h3 class="search-card-header">Search Item - 4</h3>
+          <h3 class="search-card-header">Grey Hoodie - 4</h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
@@ -1948,7 +1951,7 @@
       <div class="search-card">
         <img src="assets/product_05.jpg" alt="">
         <div class="search-card-detail">
-          <h3 class="search-card-header">Search Item - 5</h3>
+          <h3 class="search-card-header">Light Blue Hoodie - 5</h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
@@ -1956,7 +1959,7 @@
       <div class="search-card">
         <img src="assets/product_06.jpg" alt="">
         <div class="search-card-detail">
-          <h3 class="search-card-header">Search Item - 6</h3>
+          <h3 class="search-card-header">Brown Hoodie - 6</h3>
           <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
@@ -2278,8 +2281,6 @@
         </a>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="data-products.js"></script>
-    <script src="script.js"></script>
+    <script src="search.js"></script>
   </body>
 </html>
