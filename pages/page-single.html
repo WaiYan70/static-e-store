@@ -14,6 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
     <script src="/js/script.js" defer></script>
   </head>
   <body>
@@ -67,13 +68,13 @@
                                         <a href="" class="product-permalink"></a>
                                         <div class="thumbnail">
                                           <img
-                                            src="assets/product_01.jpg"
+                                            src="/assets/product_01.jpg"
                                             alt=""
                                           />
                                         </div>
                                         <div class="thumbnail hover">
                                             <img
-                                              src="assets/product_01b.jpg"
+                                              src="/assets/product_01b.jpg"
                                               alt=""
                                             />
                                         </div>
@@ -116,13 +117,13 @@
                                         <a href="" class="product-permalink"></a>
                                         <div class="thumbnail">
                                           <img
-                                            src="assets/product_02.jpg"
+                                            src="/assets/product_02.jpg"
                                             alt=""
                                           />
                                         </div>
                                         <div class="thumbnail hover">
                                           <img
-                                            src="assets/product_02b.jpg"
+                                            src="/assets/product_02b.jpg"
                                             alt=""
                                           />
                                         </div>
@@ -168,13 +169,13 @@
                                         ></a>
                                         <div class="thumbnail">
                                           <img
-                                            src="assets/product_03.jpg"
+                                            src="/assets/product_03.jpg"
                                             alt=""
                                           />
                                         </div>
                                         <div class="thumbnail hover">
                                           <img
-                                            src="assets/product_03b.jpg"
+                                            src="/assets/product_03b.jpg"
                                             alt=""
                                           />
                                         </div>
@@ -307,7 +308,7 @@
             <div class="container wide">
               <form action="" class="search">
                 <i class="ri-search-line"></i>
-                <input type="search" class="input" name="" id="" placeholder="Search the Products">
+                <input type="search" class="input" name="" id="searching-item" placeholder="Search the Products" onkeyup="search()">
                 <i class="ri-close-line" data-close-button></i>
               </form>
             </div>
@@ -315,7 +316,7 @@
         </div>
       </header>
       <main>
-        <div class="section">
+        <section class="section">
           <div class="container">
             <div class="wrap">
               <div class="product dotgrid">
@@ -324,12 +325,12 @@
                     <div class="outer-main">
                       <div class="main-image swiper">
                         <div class="wrap swiper-wrapper">
-                          <div class="item swiper-slide"><img src="assets/product_01.jpg" alt=""></div>
-                          <div class="item swiper-slide"><img src="assets/product_02.jpg" alt=""></div>
-                          <div class="item swiper-slide"><img src="assets/product_03.jpg" alt=""></div>
-                          <div class="item swiper-slide"><img src="assets/product_04.jpg" alt=""></div>
-                          <div class="item swiper-slide"><img src="assets/product_05.jpg" alt=""></div>
-                          <div class="item swiper-slide"><img src="assets/product_06.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_01.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_02.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_03.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_04.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_05.jpg" alt=""></div>
+                          <div class="item swiper-slide"><img src="/assets/product_06.jpg" alt=""></div>
                         </div>
                       </div>
                       <div class="custom-pagination">
@@ -340,22 +341,22 @@
                       <div class="thumbnail-image swiper">
                         <div class="wrap swiper-wrapper">
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_01.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_01.jpg" alt=""></div>
                           </div>
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_02.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_02.jpg" alt=""></div>
                           </div>
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_03.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_03.jpg" alt=""></div>
                           </div>
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_04.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_04.jpg" alt=""></div>
                           </div>
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_05.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_05.jpg" alt=""></div>
                           </div>
                           <div class="item swiper-slide">
-                            <div class="thumb-wrap"><img src="assets/product_06.jpg" alt=""></div>
+                            <div class="thumb-wrap"><img src="/assets/product_06.jpg" alt=""></div>
                           </div>
                         </div>
                       </div>
@@ -494,7 +495,7 @@
                   <div id="product-custom" class="product-about custom">
                     <h3>Our custom sizes</h3>
                     <div class="image">
-                      <img src="assets/custom-size.jpg" alt="">
+                      <img src="/assets/custom-size.jpg" alt="">
                     </div>
                   </div>
                   <!-- Product Review -->
@@ -515,7 +516,7 @@
                         <div class="profile">
                           <div class="thumb-name">
                             <div class="image">
-                              <img src="assets/ig_01.jpg" alt="">
+                              <img src="/assets/ig_01.jpg" alt="">
                             </div>
                             <div class="grouping">
                               <div class="name">Sarah</div>
@@ -538,7 +539,7 @@
                         <div class="profile">
                           <div class="thumb-name">
                             <div class="image">
-                              <img src="assets/ig_02.jpg" alt="">
+                              <img src="/assets/ig_02.jpg" alt="">
                             </div>
                             <div class="grouping">
                               <div class="name">Sarah</div>
@@ -561,7 +562,7 @@
                         <div class="profile">
                           <div class="thumb-name">
                             <div class="image">
-                              <img src="assets/ig_03.jpg" alt="">
+                              <img src="/assets/ig_03.jpg" alt="">
                             </div>
                             <div class="grouping">
                               <div class="name">Kamila</div>
@@ -593,7 +594,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <!-- Carousel Image Slider Section -->
         <div class="carousel">
           <div class="container">
@@ -610,13 +611,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_01.jpg"
+                            src="/assets/product_01.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                             <img
-                              src="assets/product_01b.jpg"
+                              src="/assets/product_01b.jpg"
                               alt=""
                             />
                         </div>
@@ -659,13 +660,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_02.jpg"
+                            src="/assets/product_02.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_02b.jpg"
+                            src="/assets/product_02b.jpg"
                             alt=""
                           />
                         </div>
@@ -711,13 +712,13 @@
                         ></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_03.jpg"
+                            src="/assets/product_03.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_03b.jpg"
+                            src="/assets/product_03b.jpg"
                             alt=""
                           />
                         </div>
@@ -760,13 +761,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_04.jpg"
+                            src="/assets/product_04.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                             <img
-                              src="assets/product_04b.jpg"
+                              src="/assets/product_04b.jpg"
                               alt=""
                             />
                         </div>
@@ -809,13 +810,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_05.jpg"
+                            src="/assets/product_05.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_05b.jpg"
+                            src="/assets/product_05b.jpg"
                             alt=""
                           />
                         </div>
@@ -861,13 +862,13 @@
                         ></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_06.jpg"
+                            src="/assets/product_06.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_06b.jpg"
+                            src="/assets/product_06b.jpg"
                             alt=""
                           />
                         </div>
@@ -910,13 +911,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_07.jpg"
+                            src="/assets/product_07.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                             <img
-                              src="assets/product_07b.jpg"
+                              src="/assets/product_07b.jpg"
                               alt=""
                             />
                         </div>
@@ -959,13 +960,13 @@
                         <a href="" class="product-permalink"></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_08.jpg"
+                            src="/assets/product_08.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_08b.jpg"
+                            src="/assets/product_08b.jpg"
                             alt=""
                           />
                         </div>
@@ -1011,13 +1012,13 @@
                         ></a>
                         <div class="thumbnail">
                           <img
-                            src="assets/product_03.jpg"
+                            src="/assets/product_03.jpg"
                             alt=""
                           />
                         </div>
                         <div class="thumbnail hover">
                           <img
-                            src="assets/product_03b.jpg"
+                            src="/assets/product_03b.jpg"
                             alt=""
                           />
                         </div>
@@ -1141,6 +1142,60 @@
       </footer>
     </div>
     <div class="overlay" data-overlay></div> 
+    <!-- Search Cart Items List -->
+    <div class="search-list" id= "search-list" data-search-items data-target="search-float">
+      <!-- Search Card - 1 -->
+      <div class="search-card">
+        <img src="/assets/product_01.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">
+            <!-- <a href="page-category.html">Search Item - 1</a> -->
+            Teal Sweater - 1
+          </h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Search Card - 2 -->
+      <div class="search-card">
+        <img src="/assets/product_02.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">Blue Sweater - 2</h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Search Card - 3 -->
+      <div class="search-card">
+        <img src="/assets/product_03.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">Blue Shirt - 3</h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Search Card - 4 -->
+      <div class="search-card">
+        <img src="/assets/product_04.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">Grey Hoodie - 4</h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Search Card - 5 -->
+      <div class="search-card">
+        <img src="/assets/product_05.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">Light Blue Hoodie - 5</h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <!-- Search Card - 6 -->
+      <div class="search-card">
+        <img src="/assets/product_06.jpg" alt="">
+        <div class="search-card-detail">
+          <h3 class="search-card-header">Brown Hoodie - 6</h3>
+          <p class="search-card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
     <div id="mobile-menu" class="mobile-menu">
       <div class="wrap">
         <a href="" class="close-trigger" data-close-button>
@@ -1312,7 +1367,7 @@
                             </div>
                             <div class="thumbnail">
                               <a href="">
-                                <img src="assets/product_01.jpg" alt="">
+                                <img src="/assets/product_01.jpg" alt="">
                               </a>
                             </div>
                           </div>
@@ -1344,7 +1399,7 @@
                             </div>
                             <div class="thumbnail">
                               <a href="">
-                                <img src="assets/product_02.jpg" alt="">
+                                <img src="/assets/product_02.jpg" alt="">
                               </a>
                             </div>
                           </div>
@@ -1376,7 +1431,7 @@
                             </div>
                             <div class="thumbnail">
                               <a href="">
-                                <img src="assets/product_03.jpg" alt="">
+                                <img src="/assets/product_03.jpg" alt="">
                               </a>
                             </div>
                           </div>
@@ -1408,7 +1463,7 @@
                             </div>
                             <div class="thumbnail">
                               <a href="">
-                                <img src="assets/product_04.jpg" alt="">
+                                <img src="/assets/product_04.jpg" alt="">
                               </a>
                             </div>
                           </div>
@@ -1440,7 +1495,7 @@
                             </div>
                             <div class="thumbnail">
                               <a href="">
-                                <img src="assets/product_05.jpg" alt="">
+                                <img src="/assets/product_05.jpg" alt="">
                               </a>
                             </div>
                           </div>

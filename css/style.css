@@ -110,6 +110,12 @@ h4{
     font-size: 1rem;
 }
 
+/* .function-button{
+    border: none;
+    background-color: var(--white-color);
+    font-size: 22px;
+} */
+
 /* Scrolling Animation */
 .hidden-section{
     opacity: 0;

@@ -25,6 +25,25 @@ for(let i = 0; i < triggerOpen.length;i++){
     searchItems.addEventListener('click', openData);
 }
 
+const triggerOpenCart = document.querySelectorAll('[data-trigger-button-cart]');
+
+for(let i = 0; i < triggerOpenCart.length;i++){
+    let currentId = triggerOpenCart[i].dataset.target;
+    let targetEl = document.querySelector(`#${currentId}`);
+
+    const openData = function(){
+        targetEl.classList.remove('active');
+        overlay.classList.remove('active');
+    };
+    triggerOpenCart[i].addEventListener('click', function(){
+        targetEl.classList.add('active');
+        overlay.classList.add('active');
+    });
+
+    targetEl.querySelector('[data-close-button]').addEventListener('click', openData);
+    overlay.addEventListener('click', openData);
+}
+
 // Mobile - submenu 
 const submenu = document.querySelectorAll('.child-trigger');
 submenu.forEach((menu) => menu.addEventListener('click', function(e){
